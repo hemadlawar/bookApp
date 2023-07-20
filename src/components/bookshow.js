@@ -2,18 +2,29 @@ import React from "react";
 import EditBook from "./editbook";
 import { useState } from "react";
 export default function Bookshow({ books, id, onDelete }) {
-  const [title, setTitle] = useState(books.title);
-  let bookEdit = () => {
-    setTitle(<EditBook />);
-  };
+  const [bEditt, setEdit] = useState(false);
+
   const Deletee = () => {
     onDelete(id);
   };
+  const Editform = () => {
+    setEdit(!bEditt);
+  };
+  if (bEditt) {
+    {
+      books.title = (
+        <div>
+          <EditBook />
+        </div>
+      );
+    }
+  }
+
   return (
     <div>
-      <div>{title}</div>
       <button onClick={Deletee}>delete</button>
-      <button onClick={bookEdit}>Edit book</button>
+      {books.title}
+      <button onClick={Editform}>Edit book</button>
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import React from "react";
 
 export default function EditBook() {
-  const handleinput = () => {
+  const handleinput = (event) => {
+    event.preventDefault();
+
     console.log("hhhh");
   };
   return (
     <div>
-      <form>
-        <input on onClick={handleinput} />
+      <form onSubmit={handleinput}>
+        <input />
       </form>
     </div>
   );
