@@ -12,5 +12,5 @@ export default function Booklist({ books, onDelete, onUpdate }) {
     );
   });
 
-  return <div>{show}</div>;
+  return <div className="book-list">{show}</div>;
 }

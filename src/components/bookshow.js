@@ -22,10 +22,18 @@ export default function Bookshow({ books, id, onDelete, onUpdate }) {
   }
 
   return (
-    <div>
-      <button onClick={Deletee}>delete</button>
+    <div className="book-show">
+      <img src={`https://picsum.photos/seed/${books.id}/300/200`} />
       {content}
-      <button onClick={turn}>editbook</button>
+      <div className="actions">
+        <button onClick={Deletee} className="delete">
+          delete
+        </button>
+
+        <button onClick={turn} className="edit">
+          editbook
+        </button>
+      </div>
     </div>
   );
 }

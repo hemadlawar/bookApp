@@ -15,8 +15,9 @@ export default function EditBook({ books, onUpdate, onSuubmit }) {
   };
   return (
     <div>
-      <form onSubmit={handlesubmit}>
-        <input onChange={handlechnage} />
+      <form onSubmit={handlesubmit} className="book-edit">
+        <input className="input" onChange={handlechnage} />
+        <button className="button is-primary">Save</button>
       </form>
     </div>
   );
