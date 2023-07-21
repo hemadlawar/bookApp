@@ -1,8 +1,15 @@
 import React from "react";
 import Bookshow from "./bookshow";
-export default function Booklist({ books, onDelete }) {
+export default function Booklist({ books, onDelete, onUpdate }) {
   const show = books.map((books) => {
-    return <Bookshow books={books} id={books.id} onDelete={onDelete} />;
+    return (
+      <Bookshow
+        books={books}
+        id={books.id}
+        onDelete={onDelete}
+        onUpdate={onUpdate}
+      />
+    );
   });
 
   return <div>{show}</div>;

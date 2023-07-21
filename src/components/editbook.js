@@ -1,15 +1,22 @@
 import React from "react";
+import { useState } from "react";
+export default function EditBook({ books, onUpdate, onSuubmit }) {
+  const [update, setUpdate] = useState(books.title);
 
-export default function EditBook() {
-  const handleinput = (event) => {
+  const handlesubmit = (event) => {
     event.preventDefault();
 
-    console.log("hhhh");
+    onUpdate(books.id, update);
+    onSuubmit();
+  };
+
+  const handlechnage = (event) => {
+    setUpdate(event.target.value);
   };
   return (
     <div>
-      <form onSubmit={handleinput}>
-        <input />
+      <form onSubmit={handlesubmit}>
+        <input onChange={handlechnage} />
       </form>
     </div>
   );

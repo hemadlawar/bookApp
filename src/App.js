@@ -19,11 +19,27 @@ function App() {
     });
     setBooks(deleteBookByIndex);
   };
+  // to update the title of the book
+  const editComponent = (idd, update) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id === idd) {
+        return { ...book, title: update };
+      }
+
+      return book;
+    });
+
+    setBooks(updatedBooks);
+  };
 
   return (
     <div>
       <Createbook prop={handle_form} />
-      <Booklist books={books} onDelete={deletComponents} />
+      <Booklist
+        books={books}
+        onDelete={deletComponents}
+        onUpdate={editComponent}
+      />
     </div>
   );
 }
