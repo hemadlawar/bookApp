@@ -13,7 +13,7 @@ export default function Createbook({ prop }) {
     <div className="book-create">
       <form onSubmit={formSubmit}>
         <input onChange={inputChange} className="input" />
-        <button className="button">Create!</button>
+        <button className="button">add!</button>
       </form>
     </div>
   );
