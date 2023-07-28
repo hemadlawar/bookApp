@@ -10744,3 +10744,13 @@ a.has-text-danger-dark:hover {
   width: 20px;
   z-index: 10;
 }
+.hl {
+  background-color: #00d1b2;
+  width: 200px;
+  margin-top: 50px;
+  margin-left: 710px;
+  border: 2px solid;
+  padding-left: 10px;
+  border-radius: 25px;
+  color: white;
+}
