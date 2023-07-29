@@ -1,14 +1,29 @@
 import "./App.css";
 import Createbook from "./components/createbook";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Booklist from "./components/booklist";
+import axios from "axios";
 function App() {
   const [books, setBooks] = useState([]);
 
+  const fetchBooks = async () => {
+    const response = await axios.get("http://localhost:3001/books");
+
+    setBooks(response.data);
+  };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []); //we use effect method when the our project start it will  connect to the api
+
   // this method used to set the title and id for the book and this methd
   //sends to create book file as a parametar in there it will be filled an
-  const handle_form = (data) => {
-    const updatedBooks = [...books, { id: Math.random() * 999, title: data }];
+  const handle_form = async (data) => {
+    const response = await axios.post("http://localhost:3001/books", {
+      title: data,
+    });
+    const updatedBooks = [...books, { title: response.data }];
+
     setBooks(updatedBooks);
   };
   // send this method to book list components
